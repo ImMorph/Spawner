@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour{
     [Header("Base Setup :")]
 
     [Space(3)]
-    public GameObject spawner;
+    public GameObject spawnerGameObject;
 
     [Space(3)]
     public GameObject prefabToSpawn;
@@ -196,14 +196,14 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, spawner.transform.rotation);
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, Quaternion.Euler(customRotation));
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
                 amountSpawned++;
 
             }
@@ -230,14 +230,14 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, spawner.transform.rotation);
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, Quaternion.Euler(customRotation));
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
                 amountSpawned++;
 
             }
@@ -256,14 +256,14 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, spawner.transform.rotation);
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawner.transform.position, Quaternion.Euler(customRotation));
+                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
                 amountSpawned++;
 
             }
@@ -297,6 +297,12 @@ public class Spawner : MonoBehaviour{
     #region Extras
 
     void CheckForSetupErrors(){
+
+        if (!spawnerGameObject){
+
+            spawnerGameObject = gameObject;
+
+        }
 
         if (!onceMode && !burstMode && !infiniteMode){
 
@@ -348,7 +354,7 @@ public class Spawner : MonoBehaviour{
 
         }
 
-        if (spawner == null){
+        if (spawnerGameObject == null){
 
             Debug.LogError(gameObject.name + " object isn't setup properly : no spawner has been defined in the editor...");
             setupErrorsCatched++;
@@ -359,28 +365,6 @@ public class Spawner : MonoBehaviour{
 
             Debug.LogError(gameObject.name + " object isn't setup properly : no prefab to spawn has been defined in the editor...");
             setupErrorsCatched++;
-        }
-
-    }
-
-    public void ChestSpawn(){
-
-        for (int i = 0; i < amountToSpawn; i++){
-
-            if (useSpawnerRotation){
-
-                Instantiate(prefabToSpawn, spawner.transform.position, spawner.transform.rotation);
-                amountSpawned++;
-
-            }
-
-            if (!useSpawnerRotation){
-
-                Instantiate(prefabToSpawn, spawner.transform.position, Quaternion.Euler(customRotation));
-                amountSpawned++;
-
-            }
-
         }
 
     }
