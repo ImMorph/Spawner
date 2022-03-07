@@ -196,14 +196,16 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
@@ -230,14 +232,16 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
@@ -256,14 +260,16 @@ public class Spawner : MonoBehaviour{
 
             if (useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, spawnerGameObject.transform.rotation);
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
 
             if (!useSpawnerRotation){
 
-                Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                GameObject childSpawned = Instantiate(prefabToSpawn, spawnerGameObject.transform.position, Quaternion.Euler(customRotation));
+                childSpawned.transform.parent = gameObject.transform;
                 amountSpawned++;
 
             }
